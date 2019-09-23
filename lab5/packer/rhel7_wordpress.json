@@ -13,8 +13,8 @@
             "source_ami": "ami-011b3ccf1bd6db744",
             "instance_type": "t2.micro",
             "ssh_username": "ec2-user",
-            "ami_name" : "",
-            "security_group_id" : ""
+            "ami_name" : "AMI NAME GOES HERE",
+            "security_group_id" : "YOUR SECURITY GROUP ID GOES HERE"
         }
     ],
 
