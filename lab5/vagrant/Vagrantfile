@@ -1,0 +1,19 @@
+# Require the AWS plugin
+require 'vagrant-aws'
+
+Vagrant.configure("2") do |config|
+  config.vm.box = "dummy"
+
+  config.vm.provider :aws do |aws, override|
+    aws.ami = "PACKER CREATED AMI"
+    aws.region = "us-east-1"
+    aws.instance_type = "t2.micro"
+    aws.keypair_name = "NAME OF YOUR KEYPAIR"
+    aws.security_groups = ['NAME OF YOUR SECURITY GROUP']
+    aws.access_key_id = ENV['AWS_ACCESS_KEY_ID']
+    aws.secret_access_key = ENV['AWS_SECRET_ACCESS_KEY']
+
+    override.ssh.username = "ec2-user"
+    override.ssh.private_key_path = "/home/ec2-user/YOUR_KEY_FILE"
+  end
+end
