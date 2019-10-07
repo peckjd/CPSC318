@@ -1,0 +1,24 @@
+---
+
+- name: Install LAMP stack and Wordpress 5.1.2
+  gather_facts: false
+  hosts: all
+  become: true
+  tasks:
+
+    - name: Install MySQL-python for ansible mysql modules
+      yum:
+        name: MySQL-python
+        state: latest
+
+    - name: Create Wordpress Database
+      mysql_db: 
+        name: wordpress
+        state: present
+
+    - name: Create wordpress user
+      mysql_user:
+        name: "wordpressuser"
+        password: "PUT_A_PASSWORD_HERE"
+        priv: "*.*:ALL"
+        state: present
