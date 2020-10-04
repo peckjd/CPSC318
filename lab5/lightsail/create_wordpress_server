@@ -1,0 +1,10 @@
+#!/bin/bash
+
+aws lightsail create-instances \
+    --instance-names Lab5 \
+    --availability-zone us-east-1a \
+    --blueprint-id centos_7_1901_01 \
+    --bundle-id nano_2_0 \
+    --user-data \
+    "sudo yum update -y \
+    "
