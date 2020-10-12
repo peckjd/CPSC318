@@ -2,7 +2,7 @@
 
 - name: Update machine
   gather_facts: false
-  hosts: all
+  hosts: localhost
   become: true
   tasks:
 
