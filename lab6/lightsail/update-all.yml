@@ -1,0 +1,12 @@
+---
+
+- name: Update machine
+  gather_facts: false
+  hosts: all
+  become: true
+  tasks:
+
+    - name: Update all packages
+      package:
+        name: '*'
+        state: latest
