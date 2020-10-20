@@ -1,4 +1,4 @@
-#!/bin/bash 
+#!/bin/bash
 
 usage() {
 	echo -e "Usage: $0 [-c]"
@@ -10,8 +10,6 @@ usage() {
 if [ $# -gt 1 ]; then
 	usage
 fi
-
-USE_CHECK=0
 
 for i in "$@"; do
 case $i in 
